@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8" />
+  <title>伝言板</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div class="p-4 bg-black text-white">
+    <h1 class="text-4xl">伝言板サンプル</h1>
+  </div>
+  <div class="p-4 border">
+    <h1 class="text-lg">新しいメッセージ</h1>
+    <form method="post" action="/post">
+      <div>
+        <label for="input_name">お名前</label>
+        <input required type="text" name="input_name" class="border" />
+      </div>
+      <div>
+        <label for="input_message">メッセージ</label>
+        <input required type="text" name="input_message" class="border" />
+      </div>
+      <input
+        type="submit"
+        value="投稿"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      />
+    </form>
+  </div>
+  <div class="p-4 border">
+    <h1>メッセージ一覧</h1>
+    <div>
+      <% for (const message of messages) { %>
+      <div class="bg-gray p-4 border"><%= message %></div>
+      <% } %>
+    </div>
+  </div>
+</body>
